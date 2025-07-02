@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
 const router = require("./routes/Router.js");
 app.use(router);
 
-app.listen(port, () => {
-  console.log(`DocAgenda rodando na porta ${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`DocAgenda rodando na porta ${port}`);
+  });
+}
+
